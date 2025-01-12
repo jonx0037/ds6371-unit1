@@ -1,5 +1,9 @@
-# Node modules
+# Dependencies
 node_modules/
+
+# Production
+/dist
+/build
 
 # Logs
 logs
@@ -19,7 +23,6 @@ lib-cov
 coverage/
 
 # TypeScript compiled output
-dist/
 out/
 
 # Optional npm cache directory
@@ -28,10 +31,9 @@ out/
 # Optional REPL history
 .node_repl_history
 
-# dotenv environment variable files
+# Environment variables
 .env
-node_modules
-node_modules
-node_modules
-node_modules
-node_modules
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

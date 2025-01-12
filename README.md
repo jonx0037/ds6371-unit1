@@ -1,16 +1,6 @@
 # DS 6371 - Unit 1 Presentation
 
-This repository contains the presentation website for Unit 1 of DS 6371 - Statistical Foundations for Data Science. The presentation covers three main topics:
-
-1. Creativity Study - An analysis of creativity scores between different groups
-2. Literary Digest - A historical case study in sampling bias
-3. Permutation Tests - Understanding and implementing permutation testing
-
-The website is built using:
-- React
-- TypeScript
-- Vite
-- TailwindCSS
+This repository contains the presentation materials for Unit 1 of DS 6371 - Statistical Foundations for Data Science.
 
 ## Development
 
@@ -24,6 +14,15 @@ npm run dev
 
 ## Deployment
 
-The website is automatically deployed to GitHub Pages using GitHub Actions when changes are pushed to the main branch.
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch.
 
-Visit the live site at: https://jonx0037.github.io/ds6371-unit1/
+Visit the deployed site at: https://jonx0037.github.io/ds6371-unit1/
+
+## Project Structure
+
+- `/website` - Contains the React application built with Vite
+  - `/src` - Source code
+    - `/components` - Reusable React components
+    - `/pages` - Page components for each section
+  - `vite.config.ts` - Vite configuration
+  - `package.json` - Project dependencies and scripts
