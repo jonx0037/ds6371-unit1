@@ -6,9 +6,10 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
+  deployments: write
 
 concurrency:
   group: "pages"
@@ -19,6 +20,10 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+      deployments: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,6 +44,7 @@ jobs:
         working-directory: website
         run: |
           npm run build
+          cp dist/index.html dist/404.html
           ls -la dist
 
       - name: Setup Pages
