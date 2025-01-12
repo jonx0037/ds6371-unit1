@@ -21,14 +21,6 @@ export default function Home() {
       <p>
         Select a topic from the navigation menu above to explore the detailed analysis and findings.
       </p>
-      <hr className="my-6" />
-      <div>
-        <h2>Contact & Resources</h2>
-        <ul>
-          <li>Email: <a href="mailto:jarocha@smu.edu">jarocha@smu.edu</a></li>
-          <li>GitHub Repository: <a href="https://github.com/jonx0037/ds6371-unit1" target="_blank" rel="noopener noreferrer">github.com/jonx0037/ds6371-unit1</a></li>
-        </ul>
-      </div>
     </div>
   );
 }

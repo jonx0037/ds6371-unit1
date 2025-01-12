@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Card } from '../components/ui/card';
+import { Card } from '@/components/ui/card';
 
 interface PermutationResult {
   permutation: number;
