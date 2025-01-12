@@ -11,8 +11,8 @@ const CreativityAnalysis = () => {
           <div className="bg-blue-50 p-4 rounded-md">
             <p className="text-gray-800">Testing the effect of motivation type (intrinsic vs. extrinsic) on creativity scores</p>
             <ul className="list-disc pl-6 mt-2">
-              <li>Null Hypothesis (H₀): No difference in mean creativity scores between groups (μᵢₙₜᵣᵢₙₛᵢ = μₑₓₜᵣᵢₙₛᵢ)</li>
-              <li>Alternative Hypothesis (Hₐ): Mean creativity scores differ between groups (μᵢₙₜᵣᵢₙₛᵢ ≠ μₑₓₜᵣᵢₙₛᵢ)</li>
+              <li>Null Hypothesis (H<sub>0</sub>): No difference in mean creativity scores between groups (μ<sub>intrinsic</sub> = μ<sub>extrinsic</sub>)</li>
+              <li>Alternative Hypothesis (H<sub>a</sub>): Mean creativity scores differ between groups (μ<sub>intrinsic</sub> ≠ μ<sub>extrinsic</sub>)</li>
             </ul>
           </div>
         </section>
@@ -54,7 +54,7 @@ const CreativityAnalysis = () => {
               <ul className="list-disc pl-6">
                 <li>P-value: 0.0058 (using seed=2)</li>
                 <li>Interpretation: Strong evidence against null hypothesis</li>
-                <li>Decision: Reject H₀ at α = 0.05 level</li>
+                <li>Decision: Reject H<sub>0</sub> at α = 0.05 level</li>
               </ul>
             </div>
           </div>
