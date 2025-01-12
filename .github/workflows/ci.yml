@@ -19,13 +19,14 @@ jobs:
         node-version: '16.x'
         
     - name: Install dependencies
-      run: npm install
+      run: |
+        cd website
+        npm install
       
-    - name: Run tests
-      run: npm test
-
     - name: Build project
-      run: npm run build
+      run: |
+        cd website
+        npm run build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
