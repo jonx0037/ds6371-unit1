@@ -72,19 +72,39 @@ const PermutationAnalysis = () => {
   return (
     <Card className="w-full p-6">
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold">Permutation Test Analysis</h2>
+        <section>
+          <h2 className="text-2xl font-bold">Understanding Permutation Tests</h2>
+          <div className="bg-blue-50 p-4 rounded-lg mt-4">
+            <h3 className="font-semibold mb-2">What is a Permutation Test?</h3>
+            <p className="text-gray-800">A permutation test is a type of non-parametric statistical test where the distribution of the test statistic under the null hypothesis is obtained by calculating all possible values of the test statistic under rearrangements of the labels on the observed data points.</p>
+          </div>
+        </section>
+
+        <section>
+          <h3 className="text-xl font-semibold">Key Concepts</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="font-medium mb-2">Null Hypothesis</h4>
+              <p className="text-gray-700">Under H₀, group labels are arbitrary and exchangeable because the treatment has no effect. If true, randomly reassigning labels shouldn't substantially change the test statistic.</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="font-medium mb-2">Test Statistic</h4>
+              <p className="text-gray-700">A value that measures the difference between groups. Common choices include difference in means, medians, or other summary statistics.</p>
+            </div>
+          </div>
+        </section>
         
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">Results:</h3>
-          <div className="bg-blue-50 p-4 rounded-lg">
+        <section>
+          <h3 className="text-xl font-semibold">Live Implementation Results</h3>
+          <div className="bg-blue-50 p-4 rounded-lg mt-4">
             <p><strong>Observed Difference in Means:</strong> {results.observedDiff.toFixed(4)}</p>
             <p><strong>P-value:</strong> {results.pValue.toFixed(4)}</p>
           </div>
-        </div>
+        </section>
 
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">Permutation Distribution:</h3>
-          <div className="bg-white rounded-lg h-96">
+        <section>
+          <h3 className="text-xl font-semibold">Permutation Distribution</h3>
+          <div className="bg-white rounded-lg h-96 mt-4">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={results.distribution} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -101,16 +121,31 @@ const PermutationAnalysis = () => {
               </LineChart>
             </ResponsiveContainer>
           </div>
-        </div>
+        </section>
 
-        <div className="bg-gray-50 p-4 rounded-lg">
-          <h3 className="text-xl font-semibold mb-2">Interpretation:</h3>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>The observed difference between intrinsic and extrinsic motivation groups is {results.observedDiff.toFixed(4)} points</li>
-            <li>The p-value of {results.pValue.toFixed(4)} indicates {results.pValue < 0.05 ? 'strong' : 'insufficient'} evidence against the null hypothesis</li>
-            <li>The distribution plot shows the spread of differences we would expect under the null hypothesis</li>
-          </ul>
-        </div>
+        <section>
+          <h3 className="text-xl font-semibold">Statistical Interpretation</h3>
+          <div className="space-y-4 mt-4">
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h4 className="font-medium mb-2">Results Analysis</h4>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>The observed difference between groups is {results.observedDiff.toFixed(4)} points</li>
+                <li>P-value of {results.pValue.toFixed(4)} represents the proportion of permuted differences as extreme as observed</li>
+                <li>{results.pValue < 0.05 ? 'Strong' : 'Insufficient'} evidence against the null hypothesis at α = 0.05 level</li>
+              </ul>
+            </div>
+            
+            <div className="bg-yellow-50 p-4 rounded-lg">
+              <h4 className="font-medium mb-2">Advantages of Permutation Tests</h4>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>No assumptions about underlying distributions</li>
+                <li>Exact p-values for small samples</li>
+                <li>Intuitive interpretation of results</li>
+                <li>Flexible application to various test statistics</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
     </Card>
   );
