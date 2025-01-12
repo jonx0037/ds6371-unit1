@@ -1,29 +1,11 @@
-# Workflow for deploying website to GitHub Pages
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [ main ]
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-  deployments: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
   build-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      pages: write
-      id-token: write
-      deployments: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -45,18 +27,9 @@ jobs:
         run: |
           npm run build
           cp dist/index.html dist/404.html
-          ls -la dist
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: website/dist
 
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ github.token }}
+          folder: website/dist
+          branch: gh-pages
